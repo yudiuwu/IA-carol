@@ -80,4 +80,24 @@ Aprendizado de maquina
 
     abordagem / como funcionaria no meu projeto / vantagens / desvantagens 
 
-              / a IA leria
+Extraído automaticamente/ a IA identificaria e aprenderia tudo das datasets/ pode reconhecer textos automaticamente sem intervenção humana./ um dataset pequeno ou  de dados historicos                                                                                                                                     de baixa                                                                                                                                  qualidade pode prejudicar o modelo.
+                                                                           / novos exemplos podem ajudar o modelo a aumentar sua precisão./treinamento de modelos                                                                                                                                         /mais complexos pode exigir                                                                                                                                          bastante processamento.
+
+
+ Regras seriam suficientes
+
+ Não, uma solução baseada apenas em regras seria insuficiente para o nosso projeto.
+Uma abordagem de regras do tipo “se... então...” funcionaria apenas em situações muito simples e previsíveis. Por exemplo
+Se a imagem estiver muito escura, então solicitar ao usuário que tire outra foto.
+Porém, o reconhecimento de textos em imagens envolve muitas variações, como diferentes fontes, tamanhos, ângulos, iluminação, caligrafias e fundos. Seria muito difícil criar regras para todas essas situações.
+
+
+Riscos Tecnicos
+
+Qualidade dos Dados
+
+Os dados têm valores faltantes, inconsistências, ou erros de coleta? Limpeza de dados costuma consumir 60-80% do tempo em projetos reais.
+
+Complexidade vs. Prazo
+
+A abordagem escolhida é realizável dentro do semestre? Um modelo simples bem implementado vale mais que um complexo pela metade.
