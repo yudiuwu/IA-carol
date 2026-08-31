@@ -76,19 +76,12 @@ Idioma: se o dataset utilizado tiver poucos exemplos em português, o modelo pod
 
 ATIVIDADE 3
 
-    _Abordagens Consideradas_
-
-Abordagem        |      Como Funcionaria      |          Vantagens                |        Desvantagens             |       Viabilidade       |
-_________________|____________________________|___________________________________|_________________________________|_________________________|_______
-Aprendizado de   | Aprende a reconhecer textos|  Reconhece diferentes fontes e    |Exige dados históricos rotulados.|Alta principal abordagem.|
-maquina          |  em imagens usando dados   |formatos. Pode melhorar            | risco de viés.                  |                         |
-                 | de treinamento e OCR.      |  com mais dados.                  |                                 |                         |
-______________________________________________________________________________________________________________________________________________________
-Sistema Especia- |Utiliza regras para tomar   |Fácil de implementar               | Não captura padrões sutis       | Média viável como       |
-lizado.          |decisões, como verificar    |totalmente explicável              | difícil criar regras para todas | complemento ao OCR      |
-                 |se a imagem está            |útil para controlar situações      | as formas de texto e imagens.   | mas não como            |
-                 | muito escura.              |específicas durante a leitura.     |                                 | solução principal.      |
-_______________________________________________________________________________________________________________________________________________________                 
+  #Abordagens comparativas
+  
+| Abordagem | Como Funcionaria | Vantagens | Desvantagens | Viabilidade |
+|---|---|---|---|---|
+| Aprendizado de Máquina | Aprende a reconhecer textos em imagens usando dados de treinamento e OCR. | Reconhece diferentes fontes e formatos. Pode melhorar com mais dados. | Exige dados históricos rotulados e pode apresentar risco de viés. | Alta — principal abordagem. |
+| Sistemas Especialistas | Utiliza regras para tomar decisões, como verificar se a imagem está muito escura. | Fácil de implementar, totalmente explicável e útil para controlar situações específicas durante a leitura. | Não captura padrões sutis e é difícil criar regras para todas as formas de texto e imagens. | Média — viável como complemento ao OCR, mas não como solução principal. |              
                  
 
 
