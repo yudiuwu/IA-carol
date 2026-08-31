@@ -76,12 +76,20 @@ Idioma: se o dataset utilizado tiver poucos exemplos em português, o modelo pod
 
 ATIVIDADE 3
 
-Aprendizado de maquina
+    _Abordagens Consideradas_
 
-    abordagem / como funcionaria no meu projeto / vantagens / desvantagens 
-
-Extraído automaticamente/ a IA identificaria e aprenderia tudo das datasets/ pode reconhecer textos automaticamente sem intervenção humana./ um dataset pequeno ou  de dados historicos                                                                                                                                     de baixa                                                                                                                                  qualidade pode prejudicar o modelo.
-                                                                           / novos exemplos podem ajudar o modelo a aumentar sua precisão./treinamento de modelos                                                                                                                                         /mais complexos pode exigir                                                                                                                                          bastante processamento.
+Abordagem        |      Como Funcionaria      |          Vantagens                |        Desvantagens             |       Viabilidade       |
+_________________|____________________________|___________________________________|_________________________________|_________________________|_______
+Aprendizado de   | Aprende a reconhecer textos|  Reconhece diferentes fontes e    |Exige dados históricos rotulados.|Alta principal abordagem.|
+maquina          |  em imagens usando dados   |formatos. Pode melhorar            | risco de viés.                  |                         |
+                 | de treinamento e OCR.      |  com mais dados.                  |                                 |                         |
+______________________________________________________________________________________________________________________________________________________
+Sistema Especia- |Utiliza regras para tomar   |Fácil de implementar               | Não captura padrões sutis       | Média viável como       |
+lizado.          |decisões, como verificar    |totalmente explicável              | difícil criar regras para todas | complemento ao OCR      |
+                 |se a imagem está            |útil para controlar situações      | as formas de texto e imagens.   | mas não como            |
+                 | muito escura.              |específicas durante a leitura.     |                                 | solução principal.      |
+_______________________________________________________________________________________________________________________________________________________                 
+                 
 
 
  Regras seriam suficientes
