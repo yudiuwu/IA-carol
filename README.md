@@ -76,7 +76,7 @@ Idioma: se o dataset utilizado tiver poucos exemplos em português, o modelo pod
 
 ATIVIDADE 3
 
-  #Abordagens comparativas
+  Abordagens comparativas
   
 | Abordagem | Como Funcionaria | Vantagens | Desvantagens | Viabilidade |
 |---|---|---|---|---|
@@ -93,12 +93,50 @@ Se a imagem estiver muito escura, então solicitar ao usuário que tire outra fo
 Porém, o reconhecimento de textos em imagens envolve muitas variações, como diferentes fontes, tamanhos, ângulos, iluminação, caligrafias e fundos. Seria muito difícil criar regras para todas essas situações.
 
 
-Riscos Tecnicos
 
+  Riscos Tecnicos
+
+ Falta De Dados
+O projeto utilizará dados para reconhecimento de textos por OCR. Existe o risco de o dataset escolhido possuir poucos exemplos de textos em português ou pouca variedade de fontes, tamanhos e tipos de escrita.
+
+ Desbalanceamento De Dados
+
+Existe o risco de o dataset possuir uma quantidade muito maior de determinados tipos de caracteres, fontes ou formatos de texto do que outros. Fazendo o projeto ter desempenhos menores em alguns formatos de textos menos apresentados é desempenho melhor em textos mais populares
 Qualidade dos Dados
 
-Os dados têm valores faltantes, inconsistências, ou erros de coleta? Limpeza de dados costuma consumir 60-80% do tempo em projetos reais.
 
-Complexidade vs. Prazo
 
-A abordagem escolhida é realizável dentro do semestre? Um modelo simples bem implementado vale mais que um complexo pela metade.
+ Complexidade vs. Prazo
+
+A abordagem escolhida é realizável dentro do semestre? Existe o risco de tentar desenvolver um modelo de OCR muito complexo e não conseguir concluir todas as etapas dentro do prazo. Por isso, será priorizado um modelo funcional e adequado ao objetivo do projeto, em vez de uma solução excessivamente complexa.
+
+ Qualidade dos dados
+
+ As imagens utilizadas no treinamento e nos testes podem apresentar problemas como baixa resolução, iluminação inadequada, desfoque, diferentes ângulos ou textos manuscritos, deixando muito dificil a leitura da imagem.
+
+  Outros riscos possíveis
+Existe o risco de o dataset possuir poucos exemplos em português.
+Existe o risco do OCR ser enviado para a leitura TTS é ter uma chance acabar tendo informações incorretas sendo passadas sendo necessário vários testes antes
+
+   Atualização do escopo
+
+ Previsão para 6 meses
+
+Pretendo entregar
+captura de imagens de textos utilizando a câmera do dispositivo;
+Reconhecimento dos textos presentes nas imagens utilizando OCR e técnicas de Aprendizado de Máquina;
+Conversão do texto reconhecido em áudio utilizando Text-to-Speech (TTS);
+Validação básica da qualidade da imagem, identificando situações como baixa iluminação ou dificuldade de reconhecimento;
+Testes com diferentes tipos de textos, fontes e condições de imagem;
+Desenvolvimento de uma interface simples e acessível para utilização do sistema
+
+Não acho que vou conseguir a tempo do prazo
+
+Reconhecer perfeitamente qualquer tipo de texto ou caligrafia;
+Substituir leitores humanos ou profissionais especializados;
+Realizar diagnóstico médico ou outras atividades que dependam de interpretação profissional;
+Garantir funcionamento perfeito em imagens de baixa qualidade;
+
+
+_USO DE IA_
+revisão e aprimoramento dos textos, esclarecimento de conceitos técnicos e estruturação da documentação do projeto, pesquisas sobre outras ferramentas parecidas é notar erros diferentes do enunciado
