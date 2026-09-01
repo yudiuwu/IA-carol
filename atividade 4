@@ -1,0 +1,82 @@
+1. base de dados consolidada
+
+A base contém imagens de textos manuscritos acompanhadas de suas respectivas transcrições. Ela será utilizada como ponto de partida para o desenvolvimento do módulo de OCR do IA-Carol.
+
+O IAM Handwriting Database 3.0
+
+Entrada: imagem de texto manuscrito.
+Saída esperada: texto correspondente à imagem.
+
+2. origem da base documentada
+
+Nome:	IAM Handwriting Database
+Fonte:	FKI – Institute for Information and Communication Technologies
+Tipo: Base de imagens de escrita manuscrita
+Conteúdo:	Imagens e transcrições de textos
+Finalidade: no projeto	Treinamento e avaliação do OCR
+Data de acesso:	31/08/2026
+Licença de uso A IAM Handwriting Database não usa uma licença Creative Commons padrão (como CC BY ou CC BY-NC). A condição oficial é mais específica.
+É publicamente acessível e disponibilizada gratuitamente para fins de pesquisa não comercial.
+Para usar a base, os responsáveis solicitam que o usuário faça um registro antes do download.
+
+3. dicionario
+
+Elemento     	Tipo	           Descrição
+image       	Imagem	         Imagem contendo uma amostra de escrita manuscrita.
+text	        Texto	           Transcrição correspondente ao conteúdo da imagem.
+writer_id   	Categórica	     Identificador do escritor associado à amostra, quando utilizado.
+sentence_id	  Identificador	   Identificação da sentença correspondente à imagem.
+word	        Texto	           Palavra presente na imagem, quando utilizada nessa divisão da base.
+
+4. Varíaveis de entrada e saída
+
+Imagem contendo texto manuscrito.
+
+Saída
+
+Texto reconhecido pelo OCR.
+
+fornecerá uma imagem utilizando a câmera do dispositivo. O modelo deverá interpretar essa imagem e produzir o texto correspondente, que posteriormente será convertido em áudio pelo TTS.
+
+5. Análie estatística
+
+A média mostra um valor típico dos dados.
+
+No nosso caso, usando os totais da IAM, temos aproximadamente:
+
+175,5 palavras por escritor
+74,9 palavras por página
+8,6 palavras por linha
+20,3 palavras por sentença
+
+Essas médias ajudam a entender a estrutura geral da base. Por exemplo, aproximadamente 8,6 palavras por linha indica o tamanho médio das amostras de texto disponíveis. A IAM possui 115.320 palavras, 13.353 linhas e 657 escritores
+
+desvio padrão baixo, pois muitas obras é livros, manuscritos utilizam as mesmas palavras em sua maioria
+
+6. grafico visível
+
+Vocês podem apresentar um gráfico simples dos volumes:
+
+Palavras       █████████████████████████████████████ 115.320
+Linhas         █████                              13.353
+Sentenças      ██                                  5.685
+Páginas        █                                   1.539
+Escritores     █                                     657
+
+
+
+A visualização demonstra que a base possui uma quantidade muito maior de palavras e linhas em comparação ao número de páginas e escritores. 
+Isso indica que cada escritor contribuiu com múltiplas amostras de escrita, aumentando a variedade disponível para o treinamento do modelo.
+
+7. potencial problemas
+
+Idioma: a base é composta principalmente por textos em inglês. Isso pode limitar o desempenho do sistema quando utilizado para reconhecer textos em português, principalmente por causa de acentos e caracteres específicos do idioma.
+
+Tipo de escrita: a base contém textos manuscritos. Diferentes estilos de escrita podem apresentar dificuldades para o reconhecimento pelo modelo, principalmente quando a escrita possui caracteres pouco definidos.
+
+Possível desbalanceamento: alguns caracteres ou palavras podem possuir uma quantidade maior de exemplos do que outros.
+
+Valores ausentes: ainda não foi realizada uma análise completa dos arquivos individuais para confirmar a existência de valores ausentes.
+
+Diferença entre os dados e o uso real: as imagens da base são digitalizadas, enquanto nós deverá receber fotografias capturadas pela câmera do celular. 
+Diferenças de iluminação, foco, ângulo e qualidade da imagem podem prejudicar o reconhecimento.
