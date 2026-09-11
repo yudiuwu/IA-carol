@@ -138,5 +138,30 @@ Realizar diagnóstico médico ou outras atividades que dependam de interpretaç�
 Garantir funcionamento perfeito em imagens de baixa qualidade;
 
 
-_USO DE IA_
-revisão e aprimoramento dos textos, esclarecimento de conceitos técnicos e estruturação da documentação do projeto, pesquisas sobre outras ferramentas parecidas é notar erros diferentes do enunciado
+Ativ 7
+
+1-
+
+Entradas, processamentos é saídas
+
+Inicio: No meu sistema deve entrar, fotos ou escaneamentos da tela com textos ou algo que o usuário precise "ler"
+
+Processo: É passado a ser convertido em OCR é TTS
+
+Final: Vira áudio feito pela IA
+
+Remoção: dados iguais, imagens repetidas ou desfocadas é null
+
+
+Supervisionado, Não Supervisionado ou Por Reforço
+
+Acredito que o supervisionado seja o mais adequado já que ele vai aprender é ter as respostas já das imagens que ele vai transcrever
+
+
+Planejamento é divisão de dados
+
+usar cross-validation por que o dataset não é tão grande com mais de mil dados
+
+Aleatória, por que nosso data set não depende especificamente de datas, elas não interfeririam diretamente
+Utilizar stratify já que existe a chance de repetir dados seja imagens ou escritas 
+
