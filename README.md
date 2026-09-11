@@ -153,9 +153,11 @@ Final: Vira áudio feito pela IA
 Remoção: dados iguais, imagens repetidas ou desfocadas é null
 
 
+
 Supervisionado, Não Supervisionado ou Por Reforço
 
 Acredito que o supervisionado seja o mais adequado já que ele vai aprender é ter as respostas já das imagens que ele vai transcrever
+
 
 
 Planejamento é divisão de dados
