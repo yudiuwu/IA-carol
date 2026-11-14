@@ -1,14 +1,14 @@
 ## 2. Identificação da base de dados
 
-**Nome:** EMNIST Letters  
-**Fonte:** NIST – National Institute of Standards and Technology  
-**Disponibilização:** TensorFlow Datasets  
-**Tipo:** Base de imagens de caracteres manuscritos  
-**Conteúdo:** Imagens de letras manuscritas e seus respectivos rótulos.  
-**Finalidade no projeto:** Treinamento e avaliação do modelo de reconhecimento de caracteres, como etapa inicial do desenvolvimento do OCR.  
-**Data de acesso:** 14/11/2026
+Nome: EMNIST Letters  
+Fonte: NIST – National Institute of Standards and Technology  
+Disponibilização: TensorFlow Datasets  
+Tipo: Base de imagens de caracteres manuscritos  
+Conteúdo: Imagens de letras manuscritas e seus respectivos rótulos.  
+Finalidade no projeto: Treinamento e avaliação do modelo de reconhecimento de caracteres, como etapa inicial do desenvolvimento do OCR.  
+Data de acesso: 14/11/2026
 
-**Licença de uso:** A base EMNIST é disponibilizada para pesquisa e desenvolvimento. Seu uso deve respeitar as condições de distribuição e os termos da fonte original. Não deve ser considerada automaticamente uma base sob licença Creative Commons.
+Licença de uso: A base EMNIST é disponibilizada para pesquisa e desenvolvimento. Seu uso deve respeitar as condições de distribuição e os termos da fonte original. Não deve ser considerada automaticamente uma base sob licença Creative Commons.
 
 ## 3. Dicionário de dados
 
@@ -21,9 +21,9 @@
 
 ## 4. Variáveis de entrada e saída
 
-**Entrada:** Imagem contendo uma letra manuscrita, representada por 28 × 28 pixels e posteriormente transformada em um vetor de 784 valores.
+Entrada: Imagem contendo uma letra manuscrita, representada por 28 × 28 pixels e posteriormente transformada em um vetor de 784 valores.
 
-**Saída:** Letra reconhecida pelo modelo, correspondente a uma das 26 classes do alfabeto.
+Saída: Letra reconhecida pelo modelo, correspondente a uma das 26 classes do alfabeto.
 
 No projeto completo, o usuário deverá fornecer uma imagem utilizando a câmera do dispositivo. Entretanto, a etapa atual utiliza imagens já preparadas da base EMNIST. Futuramente, o sistema deverá interpretar a imagem capturada, reconhecer os caracteres, formar o texto e convertê-lo em áudio por meio da tecnologia TTS (Text-to-Speech).
 
@@ -33,12 +33,12 @@ A média representa um valor típico dos dados analisados.
 
 No nosso caso, a base EMNIST Letters utilizada possui:
 
-- **Total de imagens:** 103.600
-- **Imagens para treinamento:** 88.800 na divisão original.
-- **Imagens para teste:** 14.800 na divisão original.
-- **Classes:** 26, correspondentes às letras do alfabeto.
-- **Dimensão das imagens:** 28 × 28 pixels.
-- **Valores por imagem após transformação:** 784.
+- Total de imagens: 103.600
+- Imagens para treinamento: 88.800 na divisão original.
+- Imagens para teste: 14.800 na divisão original.
+- Classes: 26, correspondentes às letras do alfabeto.
+- Dimensão das imagens: 28 × 28 pixels.
+- Valores por imagem após transformação: 784.
 
 As imagens são distribuídas entre as 26 classes. Na divisão experimental utilizada para comparar KNN e MLP, os dados originais foram reunidos e separados novamente em 80% para treinamento e 20% para teste, utilizando `stratify` para preservar aproximadamente a proporção das classes.
 
@@ -62,14 +62,15 @@ A visualização demonstra que a base possui uma quantidade significativa de ima
 
 ## 7. Potenciais problemas
 
-**Idioma:** A base EMNIST Letters trabalha com letras do alfabeto latino, mas não representa diretamente todos os caracteres específicos da língua portuguesa, como letras acentuadas (á, é, í, ó, ú, ç). Isso pode limitar o reconhecimento de textos em português.
+Idioma: A base EMNIST Letters trabalha com letras do alfabeto latino, mas não representa diretamente todos os caracteres específicos da língua portuguesa, como letras acentuadas (á, é, í, ó, ú, ç). Isso pode limitar o reconhecimento de textos em português.
 
-**Tipo de escrita:** A base contém letras manuscritas. Diferentes estilos de escrita podem dificultar o reconhecimento, principalmente quando os caracteres são semelhantes ou pouco definidos.
+Tipo de escrita: A base contém letras manuscritas. Diferentes estilos de escrita podem dificultar o reconhecimento, principalmente quando os caracteres são semelhantes ou pouco definidos.
 
-**Possível desbalanceamento:** A quantidade de exemplos pode variar entre as classes. Por isso, é importante analisar a distribuição das imagens e o desempenho individual de cada letra.
+Possível desbalanceamento: A quantidade de exemplos pode variar entre as classes. Por isso, é importante analisar a distribuição das imagens e o desempenho individual de cada letra.
 
-**Valores ausentes:** As imagens são fornecidas em formato numérico. É importante verificar se existem valores inválidos, como dados ausentes ou valores infinitos, durante o pré-processamento.
+Valores ausentes: As imagens são fornecidas em formato numérico. É importante verificar se existem valores inválidos, como dados ausentes ou valores infinitos, durante o pré-processamento.
 
-**Diferença entre os dados e o uso real:** As imagens da EMNIST são amostras padronizadas de caracteres isolados, enquanto o sistema deverá receber fotografias capturadas pela câmera do celular. Diferenças de iluminação, foco, ângulo, resolução e posicionamento podem prejudicar o reconhecimento.
+Diferença entre os dados e o uso real: As imagens da EMNIST são amostras padronizadas de caracteres isolados, enquanto o sistema deverá receber fotografias capturadas pela câmera do celular. Diferenças de iluminação, foco, ângulo, resolução e posicionamento podem prejudicar o reconhecimento.
 
-**Limitação do reconhecimento:** A EMNIST Letters trabalha com letras isoladas, não com páginas completas, frases ou documentos. Portanto, será necessário desenvolver etapas adicionais de segmentação e organização dos caracteres para que o sistema consiga realizar a leitura de textos completos.
+Limitação do reconhecimento: A EMNIST Letters trabalha com letras isoladas, não com páginas completas, frases ou documentos. Portanto, será necessário desenvolver etapas adicionais de segmentação e organização dos caracteres para que o sistema consiga realizar a leitura de textos completos.
+s
