@@ -1,82 +1,75 @@
-1. base de dados consolidada
+## 2. Identificação da base de dados
 
-A base contém imagens de textos manuscritos acompanhadas de suas respectivas transcrições. Ela será utilizada como ponto de partida para o desenvolvimento do módulo de OCR do IA-Carol.
+**Nome:** EMNIST Letters  
+**Fonte:** NIST – National Institute of Standards and Technology  
+**Disponibilização:** TensorFlow Datasets  
+**Tipo:** Base de imagens de caracteres manuscritos  
+**Conteúdo:** Imagens de letras manuscritas e seus respectivos rótulos.  
+**Finalidade no projeto:** Treinamento e avaliação do modelo de reconhecimento de caracteres, como etapa inicial do desenvolvimento do OCR.  
+**Data de acesso:** 14/11/2026
 
-O IAM Handwriting Database 3.0
+**Licença de uso:** A base EMNIST é disponibilizada para pesquisa e desenvolvimento. Seu uso deve respeitar as condições de distribuição e os termos da fonte original. Não deve ser considerada automaticamente uma base sob licença Creative Commons.
 
-Entrada: imagem de texto manuscrito.
-Saída esperada: texto correspondente à imagem.
+## 3. Dicionário de dados
 
-2. origem da base documentada
+| Elemento | Tipo | Descrição |
+|---|---|---|
+| image | Imagem | Imagem de uma letra manuscrita, com dimensão de 28 × 28 pixels. |
+| label | Numérico/categórico | Classe correspondente à letra representada na imagem. |
+| X | Numérico | Representação da imagem transformada em um vetor de 784 valores. |
+| y | Numérico/categórico | Rótulo que identifica a letra correta, entre 26 classes. |
 
-Nome:	IAM Handwriting Database
-Fonte:	FKI – Institute for Information and Communication Technologies
-Tipo: Base de imagens de escrita manuscrita
-Conteúdo:	Imagens e transcrições de textos
-Finalidade: no projeto	Treinamento e avaliação do OCR
-Data de acesso:	31/08/2026
-Licença de uso A IAM Handwriting Database não usa uma licença Creative Commons padrão (como CC BY ou CC BY-NC). A condição oficial é mais específica.
-É publicamente acessível e disponibilizada gratuitamente para fins de pesquisa não comercial.
-Para usar a base, os responsáveis solicitam que o usuário faça um registro antes do download.
+## 4. Variáveis de entrada e saída
 
-3. dicionario
+**Entrada:** Imagem contendo uma letra manuscrita, representada por 28 × 28 pixels e posteriormente transformada em um vetor de 784 valores.
 
-Elemento     	Tipo	           Descrição
-image       	Imagem	         Imagem contendo uma amostra de escrita manuscrita.
-text	        Texto	           Transcrição correspondente ao conteúdo da imagem.
-writer_id   	Categórica	     Identificador do escritor associado à amostra, quando utilizado.
-sentence_id	  Identificador	   Identificação da sentença correspondente à imagem.
-word	        Texto	           Palavra presente na imagem, quando utilizada nessa divisão da base.
+**Saída:** Letra reconhecida pelo modelo, correspondente a uma das 26 classes do alfabeto.
 
-4. Varíaveis de entrada e saída
+No projeto completo, o usuário deverá fornecer uma imagem utilizando a câmera do dispositivo. Entretanto, a etapa atual utiliza imagens já preparadas da base EMNIST. Futuramente, o sistema deverá interpretar a imagem capturada, reconhecer os caracteres, formar o texto e convertê-lo em áudio por meio da tecnologia TTS (Text-to-Speech).
 
-Imagem contendo texto manuscrito.
+## 5. Análise estatística
 
-Saída
+A média representa um valor típico dos dados analisados.
 
-Texto reconhecido pelo OCR.
+No nosso caso, a base EMNIST Letters utilizada possui:
 
-fornecerá uma imagem utilizando a câmera do dispositivo. O modelo deverá interpretar essa imagem e produzir o texto correspondente, que posteriormente será convertido em áudio pelo TTS.
+- **Total de imagens:** 103.600
+- **Imagens para treinamento:** 88.800 na divisão original.
+- **Imagens para teste:** 14.800 na divisão original.
+- **Classes:** 26, correspondentes às letras do alfabeto.
+- **Dimensão das imagens:** 28 × 28 pixels.
+- **Valores por imagem após transformação:** 784.
 
-5. Análie estatística
+As imagens são distribuídas entre as 26 classes. Na divisão experimental utilizada para comparar KNN e MLP, os dados originais foram reunidos e separados novamente em 80% para treinamento e 20% para teste, utilizando `stratify` para preservar aproximadamente a proporção das classes.
 
-A média mostra um valor típico dos dados.
+Essa análise ajuda a compreender o tamanho da base e a quantidade de exemplos disponíveis para cada letra.
 
-No nosso caso, usando os totais da IAM, temos aproximadamente:
+## 6. Gráfico visível
 
-175,5 palavras por escritor
-74,9 palavras por página
-8,6 palavras por linha
-20,3 palavras por sentença
+É possível apresentar um gráfico com a quantidade de imagens por classe, representando as 26 letras do alfabeto.
 
-Essas médias ajudam a entender a estrutura geral da base. Por exemplo, aproximadamente 8,6 palavras por linha indica o tamanho médio das amostras de texto disponíveis. A IAM possui 115.320 palavras, 13.353 linhas e 657 escritores
+Também pode ser apresentado um resumo dos volumes:
 
-desvio padrão baixo, pois muitas obras é livros, manuscritos utilizam as mesmas palavras em sua maioria
+| Elemento | Quantidade |
+|---|---:|
+| Imagens | 103.600 |
+| Classes | 26 |
+| Pixels por imagem | 784 |
+| Imagens de treinamento na divisão original | 88.800 |
+| Imagens de teste na divisão original | 14.800 |
 
-6. grafico visível
+A visualização demonstra que a base possui uma quantidade significativa de imagens para o treinamento e avaliação do modelo. A divisão entre as classes permite analisar o desempenho do reconhecimento de cada letra.
 
-Vocês podem apresentar um gráfico simples dos volumes:
+## 7. Potenciais problemas
 
-Palavras       █████████████████████████████████████ 115.320
-Linhas         █████                              13.353
-Sentenças      ██                                  5.685
-Páginas        █                                   1.539
-Escritores     █                                     657
+**Idioma:** A base EMNIST Letters trabalha com letras do alfabeto latino, mas não representa diretamente todos os caracteres específicos da língua portuguesa, como letras acentuadas (á, é, í, ó, ú, ç). Isso pode limitar o reconhecimento de textos em português.
 
+**Tipo de escrita:** A base contém letras manuscritas. Diferentes estilos de escrita podem dificultar o reconhecimento, principalmente quando os caracteres são semelhantes ou pouco definidos.
 
+**Possível desbalanceamento:** A quantidade de exemplos pode variar entre as classes. Por isso, é importante analisar a distribuição das imagens e o desempenho individual de cada letra.
 
-A visualização demonstra que a base possui uma quantidade muito maior de palavras e linhas em comparação ao número de páginas e escritores. 
-Isso indica que cada escritor contribuiu com múltiplas amostras de escrita, aumentando a variedade disponível para o treinamento do modelo.
+**Valores ausentes:** As imagens são fornecidas em formato numérico. É importante verificar se existem valores inválidos, como dados ausentes ou valores infinitos, durante o pré-processamento.
 
-7. potencial problemas
+**Diferença entre os dados e o uso real:** As imagens da EMNIST são amostras padronizadas de caracteres isolados, enquanto o sistema deverá receber fotografias capturadas pela câmera do celular. Diferenças de iluminação, foco, ângulo, resolução e posicionamento podem prejudicar o reconhecimento.
 
-Idioma: a base é composta principalmente por textos em inglês. Isso pode limitar o desempenho do sistema quando utilizado para reconhecer textos em português, principalmente por causa de acentos e caracteres específicos do idioma.
-
-Tipo de escrita: a base contém textos manuscritos. Diferentes estilos de escrita podem apresentar dificuldades para o reconhecimento pelo modelo, principalmente quando a escrita possui caracteres pouco definidos.
-
-Possível desbalanceamento: alguns caracteres ou palavras podem possuir uma quantidade maior de exemplos do que outros.
-
-Valores ausentes: ainda não foi realizada uma análise completa dos arquivos individuais para confirmar a existência de valores ausentes.
-
-Diferença entre os dados e o uso real: as imagens da base são digitalizadas, enquanto nós deverá receber fotografias capturadas pela câmera do celular. 
-Diferenças de iluminação, foco, ângulo e qualidade da imagem podem prejudicar o reconhecimento.
+**Limitação do reconhecimento:** A EMNIST Letters trabalha com letras isoladas, não com páginas completas, frases ou documentos. Portanto, será necessário desenvolver etapas adicionais de segmentação e organização dos caracteres para que o sistema consiga realizar a leitura de textos completos.
